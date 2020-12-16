@@ -1,23 +1,21 @@
 let container = document.getElementById('container');
 
 
-function addEventOnMouseEnter() {
-  let gridItems = document.querySelectorAll(".grid-item");
-  gridItems.forEach(item => item.addEventListener("mouseenter", draw));
-}
+function drawing(){
+  const gridItems = document.querySelectorAll('.grid-item');
 
-function draw() {
-  this.style['background-color'] = `red`;
-  this.style['opacity'] = .5;
+  gridItems.forEach(item => {
+      let itemOpacity = 0;
+      item.addEventListener("mouseover", () => {
+          itemOpacity += 0.1;
+          item.style.backgroundColor = "black";
+          item.style.opacity = `${itemOpacity}`;
+      });
+  });
 };
-
-function changeOpacity() {
-  this.style['opacity'] += .1; 
-};
-
 
 function getRowsAndColumns () {
-  let rows = prompt("How many rows would you like?");
+  let rows = prompt("How many rows would you like to have?");
   let columns = prompt("And how many columns?");
   return [rows, columns];
 };
@@ -34,7 +32,7 @@ function createGrid(gridTemplate) {
   clearContainer();
   createDivs(gridTemplate);
   addGridTemplate(gridTemplate[1]);
-  addEventOnMouseEnter();
+  drawing();
 };
 
 function clearContainer() {
