@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    width: auto;
+    height: auto;
+    border-left: 1px solid gray;
+    display: grid;
+}
+
+.grid-item {
+    height: 30px;
+    border: 1px solid gray;
+    opacity: 0.1;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 5px;
+    width: 30vw;
+    font-size: 2em;
+}
